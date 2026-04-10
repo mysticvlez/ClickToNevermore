@@ -258,3 +258,73 @@ button:hover {
         font-size: 0.8rem;
     }
 }
+
+/* AJUSTES RESPONSIVOS */
+
+/* 1. Contenedor principal: que no se pegue a los bordes */
+#app {
+    padding: 10px;
+    height: auto; /* Permite que crezca si el contenido es largo en móvil */
+    min-height: 100dvh;
+}
+
+/* 2. Las cartas: en móvil una arriba de la otra */
+.cards-container {
+    flex-direction: column; /* Apiladas verticalmente */
+    gap: 10px;
+    width: 100%;
+}
+
+.character-card {
+    width: 90%; /* Que ocupen casi todo el ancho */
+    max-width: 300px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+/* 3. Ajuste de imágenes para que no ocupen toda la pantalla */
+.img-container {
+    max-height: 200px; /* Un poco más pequeñas en móvil para que quepan ambas */
+}
+
+/* 4. Textos: adaptables */
+.logo {
+    font-size: 2.2rem; /* Más pequeño en móvil */
+    margin-bottom: 15px;
+}
+
+#question-text {
+    font-size: 1.1rem;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+/* 5. MEDIA QUERY: Para pantallas grandes (Tablets y PC) */
+@media (min-width: 768px) {
+    .cards-container {
+        flex-direction: row; /* Vuelven a estar una al lado de la otra */
+        gap: 25px;
+    }
+    
+    .logo {
+        font-size: 4rem;
+    }
+
+    .img-container {
+        max-height: none; /* Sin límite en PC */
+    }
+
+    .character-card {
+        width: 260px;
+    }
+}
+
+/* 6. Footer (Legal) para móvil */
+.disclaimer {
+    padding: 15px 10px; /* Un poco más de espacio para los dedos */
+}
+
+.disclaimer p {
+    font-size: 0.55rem;
+    line-height: 1.2;
+}
