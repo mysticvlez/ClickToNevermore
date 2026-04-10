@@ -23,7 +23,7 @@ const characters = [
 const langData = {
     es: {
         play: "Jugar", langBtn: "Idioma: ES", credits: "Créditos", counter: "Elección:", replay: "Volver a jugar", home: "Menú",
-        made: "Hecho por MysticVlez", insp: "Inspirado en Merlina (Netflix)",
+        made: "Hecho por Elias Villegas (MysticVlez)", insp: "Inspirado en Merlina (Netflix)",
         legal: "Este es un proyecto sin fines de lucro creado por fans. Todos los derechos de los personajes e imágenes pertenecen a Netflix.",
         questions: [
             "¿Con quién preferirías compartir habitación en Nevermore?",
@@ -98,7 +98,7 @@ const langData = {
     },
     en: {
         play: "Play", langBtn: "Language: EN", credits: "Credits", counter: "Choice:", replay: "Play Again", home: "Menu",
-        made: "Made by MysticVlez", insp: "Inspired by Wednesday (Netflix)",
+        made: "Made by Elias Villegas (MysticVlez)", insp: "Inspired by Wednesday (Netflix)",
         legal: "This is a non-profit fan project. All rights to characters and images belong to Netflix.",
         questions: [
             "Who would you share a room with in Nevermore?",
