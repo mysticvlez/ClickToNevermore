@@ -1,0 +1,260 @@
+/* NEVERMORE CHOICES - CSS UNIFICADO 
+   Estilo: Minimalista / Dark / Wednesday Addams 
+*/
+
+:root {
+    --bg-color: #050505;
+    --line-color: #151515;
+    --accent: #4b0082;
+    --text: #ffffff;
+    --font-main: 'Cinzel', serif;
+    --font-alt: 'Special Elite', cursive;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    color: var(--text);
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: repeating-linear-gradient(90deg, var(--line-color) 0px, var(--line-color) 2px, transparent 2px, transparent 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    font-family: var(--font-main);
+    text-align: center;
+    overflow: hidden;
+    transition: background-image 3s ease-out;
+}
+
+/* El brillo xd */
+body.flash-lines { 
+    background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.4) 0px, rgba(255,255,255,0.1) 1px, transparent 2px, transparent 40px);
+    transition: none; 
+}
+
+#app { 
+    width: 100%; 
+    max-width: 1100px; 
+    padding: 20px; 
+    height: 100dvh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Pantallas y Transiciones */
+.screen { 
+    display: none; 
+    flex-direction: column; 
+    align-items: center; 
+    opacity: 0; 
+    transform: scale(0.95); 
+    transition: all 0.4s ease-in-out; 
+}
+
+.screen.active { 
+    display: flex; 
+    opacity: 1; 
+    transform: scale(1); 
+}
+
+.logo { 
+    font-size: clamp(2.5rem, 10vw, 5rem); 
+    margin-bottom: 30px; 
+    text-shadow: 0 0 15px var(--accent); 
+    color: #fff;
+}
+
+/* Menú: Botones idénticos */
+.menu-options { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    width: 100%; 
+    max-width: 320px; 
+    margin: 0 auto; 
+}
+
+button {
+    width: 100%; 
+    font-family: var(--font-main); 
+    background: #000; 
+    color: #fff;
+    border: 2px solid var(--accent); 
+    padding: 16px; 
+    cursor: pointer;
+    font-size: 1.1rem; 
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+button:hover { 
+    background: var(--accent); 
+    transform: scale(1.03); 
+    box-shadow: 0 0 20px var(--accent); 
+}
+
+/* Juego y Preguntas */
+.status-bar { font-size: 0.8rem; color: #888; margin-bottom: 10px; }
+#question-text { 
+    font-family: var(--font-alt); 
+    font-size: clamp(1rem, 4.5vw, 1.4rem); 
+    min-height: 3.5em; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: #fff;
+}
+
+/* Contenedor de cartas para el cambio */
+.cards-container { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+    width: 100%; 
+    max-width: 100%;
+    align-items: center; 
+    transition: opacity 0.1s ease-in-out;
+}
+
+@media (min-width: 768px) { 
+    .cards-container { flex-direction: row; justify-content: center; gap: 30px; } 
+}
+
+.character-card { 
+    background: #0a0a0a; 
+    width: 100%; 
+    max-width: 260px; 
+    padding: 12px; 
+    border: 1px solid #222; 
+    cursor: pointer; 
+    transition: transform 0.2s ease;
+}
+
+.character-card:hover { 
+    border-color: #fff; 
+    transform: translateY(-5px); 
+}
+
+.character-card:active {
+    transform: scale(0.95);
+}
+
+.img-container { 
+    width: 100%; 
+    aspect-ratio: 1/1; 
+    overflow: hidden; 
+    border: 1px solid var(--accent); 
+    margin-bottom: 10px; 
+}
+
+.img-container img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.actor-name { 
+    font-size: 0.75rem; 
+    color: #bbb; 
+    margin-top: 4px; 
+}
+
+/* Resultados */
+.results-history { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 6px; 
+    max-height: 55vh; 
+    overflow-y: auto; 
+    width: 90%; 
+    margin: 15px 0;
+    padding: 5px;
+}
+
+@media (max-width: 700px) { 
+    .results-history { grid-template-columns: repeat(2, 1fr); } 
+}
+
+.result-box { 
+    background: #0d0d0d; 
+    border: 1px solid var(--accent); 
+    padding: 6px; 
+    font-size: 0.8rem; 
+    text-align: left; 
+}
+
+.result-box img { 
+    width: 100%; 
+    aspect-ratio: 1/1; 
+    object-fit: cover; 
+    margin-bottom: 4px; 
+}
+
+/* Modal y Botón Cerrar Estético */
+.modal { 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0,0,0,0.95); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 100; 
+}
+
+.modal-content { 
+    background: #000; 
+    padding: 25px; 
+    border: 2px solid var(--accent); 
+    max-width: 280px; 
+    width: 90%;
+}
+
+#btn-credits-close { 
+    width: auto; 
+    padding: 6px 15px; 
+    font-size: 0.7rem; 
+    margin-top: 15px; 
+    border: 1px solid #444; 
+    background: #1a1a1a; 
+}
+
+#btn-credits-close:hover {
+    background: #333;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Utilidades */
+.hidden { display: none !important; }
+
+
+/*DERECHOS DE AUTOR*/
+.disclaimer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.disclaimer p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: sans-serif;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .disclaimer p {
+        font-size: 0.8rem;
+    }
+}

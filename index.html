@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CLICK TO NEVERMORE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="icon" href="N.png" type="image/png">
+</head>
+<body>
+    <div id="app">
+        <section id="menu-screen" class="screen active">
+            <h1 class="logo">CLICK TO NEVERMORE</h1>
+            <div class="menu-options">
+                <button id="btn-play">Jugar</button>
+                <button id="btn-lang">Idioma: ES</button>
+                <button id="btn-credits-open" class="btn-small">Créditos</button>
+            </div>
+        </section>
+
+        <section id="game-screen" class="screen hidden">
+            <div class="game-header">
+                <div class="status-bar">
+                    <span id="label-counter">Elección:</span> <span id="current-count">0</span> / 15
+                </div>
+                <p id="question-text">¿Cargando misterio...?</p>
+            </div>
+            
+            <div class="cards-container">
+                <div class="character-card" id="card-left">
+                    <div class="img-container"><img id="img-1" src="" alt=""></div>
+                    <div class="card-info">
+                        <h2 id="name-1">---</h2>
+                        <p id="actor-1" class="actor-name">---</p>
+                    </div>
+                </div>
+
+                <div class="character-card" id="card-right">
+                    <div class="img-container"><img id="img-2" src="" alt=""></div>
+                    <div class="card-info">
+                        <h2 id="name-2">---</h2>
+                        <p id="actor-2" class="actor-name">---</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="result-screen" class="screen hidden">
+            <h2 id="final-verdict">---</h2>
+            <div id="results-history" class="results-history"></div>
+            <div class="result-actions">
+                <button id="btn-replay">Jugar de nuevo</button>
+                <button id="btn-home">Menú Principal</button>
+            </div>
+        </section>
+
+        <div id="modal-credits" class="modal hidden">
+            <div class="modal-content">
+                <p id="cred-made"></p>
+                <p>2026</p>
+                <p id="cred-insp"></p>
+                <button id="btn-credits-close">Cerrar [X]</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="snd-hover" src="sounds/hover.mp3" preload="auto"></audio>
+    <audio id="snd-click" src="sounds/click.mp3" preload="auto"></audio>
+    
+    <footer class="disclaimer">
+    <p id="legal-text"></p> </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
