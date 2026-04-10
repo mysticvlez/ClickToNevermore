@@ -41,7 +41,7 @@ body.flash-lines {
     width: 100%; 
     max-width: 1100px; 
     padding: 20px;
-    padding-bottom: 50px; /* Espacio reservado para que el footer no tape nada */
+    padding-bottom: 50px;
     height: 100dvh; 
     display: flex; 
     flex-direction: column; 
@@ -49,7 +49,6 @@ body.flash-lines {
     overflow: hidden;
 }
 
-/* Pantallas y Transiciones */
 .screen { 
     display: none; 
     flex-direction: column; 
@@ -72,7 +71,7 @@ body.flash-lines {
     color: #fff;
 }
 
-/* Menú: Botones idénticos */
+/* Menú */
 .menu-options { 
     display: flex; 
     flex-direction: column; 
@@ -262,9 +261,9 @@ button:hover {
     }
 
     #question-text {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-        min-height: 2.5em;
+    font-size: 0.9rem; /* Antes era 1.1 o 1.4 */
+    margin-bottom: 8px;
+    min-height: 2em;
     }
 
     /* Las cartas se apilan SOLO en celular */
@@ -273,18 +272,19 @@ button:hover {
         gap: 10px; 
     }
 
-    /* Solo cambia esta parte dentro del @media (max-width: 768px) */
-.img-container {
-    aspect-ratio: 1/1; /* Mantiene el cuadrado perfecto */
-    max-height: none;  /* Evita que se aplaste la imagen */
-    width: 100%;
-}
+    .character-card {
+    width: 170px;
+    padding: 6px;
+    }
 
-.character-card {
-    width: 90%; 
-    max-width: 250px; /* Ajustamos un poco el ancho para que quepa mejor en vertical */
-    margin: 0 auto;
-}
+    .img-container {
+    aspect-ratio: 1/1;
+    margin-bottom: 4px;
+    } 
+
+    .character-card strong {
+    font-size: 0.8rem;
+    }
 
     .results-history { 
         grid-template-columns: repeat(2, 1fr); 
@@ -297,7 +297,6 @@ button:hover {
     }
 
     .disclaimer p {
-        font-size: 0.55rem;
-        line-height: 1.2;
+    font-size: 0.5rem;
     }
 }
