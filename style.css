@@ -40,7 +40,8 @@ body.flash-lines {
 #app { 
     width: 100%; 
     max-width: 1100px; 
-    padding: 20px; 
+    padding: 20px;
+    padding-bottom: 50px; /* Espacio reservado para que el footer no tape nada */
     height: 100dvh; 
     display: flex; 
     flex-direction: column; 
@@ -111,19 +112,16 @@ button:hover {
     color: #fff;
 }
 
-/* Contenedor de cartas para el cambio */
+/* Contenedor de cartas para el cambio (VISTA PC POR DEFECTO) */
 .cards-container { 
     display: flex; 
-    flex-direction: column; 
-    gap: 15px; 
+    flex-direction: row; 
+    justify-content: center; 
+    gap: 30px; 
     width: 100%; 
     max-width: 100%;
     align-items: center; 
     transition: opacity 0.1s ease-in-out;
-}
-
-@media (min-width: 768px) { 
-    .cards-container { flex-direction: row; justify-content: center; gap: 30px; } 
 }
 
 .character-card { 
@@ -175,10 +173,6 @@ button:hover {
     width: 90%; 
     margin: 15px 0;
     padding: 5px;
-}
-
-@media (max-width: 700px) { 
-    .results-history { grid-template-columns: repeat(2, 1fr); } 
 }
 
 .result-box { 
@@ -233,8 +227,7 @@ button:hover {
 /* Utilidades */
 .hidden { display: none !important; }
 
-
-/*DERECHOS DE AUTOR*/
+/* DERECHOS DE AUTOR (VISTA PC) */
 .disclaimer {
     position: fixed;
     bottom: 0;
@@ -253,78 +246,58 @@ button:hover {
     margin: 0;
 }
 
-@media (max-width: 480px) {
-    .disclaimer p {
-        font-size: 0.8rem;
+/* =========================================================
+   REPARACIÓN SOLO PARA CELULARES (NO AFECTA A PC)
+   ========================================================= */
+@media (max-width: 768px) {
+    
+    #app {
+        padding: 10px;
+        padding-bottom: 40px; /* Evita que el footer se coma el contenido */
     }
-}
 
-/* AJUSTES RESPONSIVOS */
+    .logo {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
 
-/* 1. Contenedor principal: que no se pegue a los bordes */
-#app {
-    padding: 10px;
-    height: auto; /* Permite que crezca si el contenido es largo en móvil */
-    min-height: 100dvh;
-}
+    #question-text {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        min-height: 2.5em;
+    }
 
-/* 2. Las cartas: en móvil una arriba de la otra */
-.cards-container {
-    flex-direction: column; /* Apiladas verticalmente */
-    gap: 10px;
+    /* Las cartas se apilan SOLO en celular */
+    .cards-container {
+        flex-direction: column;
+        gap: 10px; 
+    }
+
+    /* Solo cambia esta parte dentro del @media (max-width: 768px) */
+.img-container {
+    aspect-ratio: 1/1; /* Mantiene el cuadrado perfecto */
+    max-height: none;  /* Evita que se aplaste la imagen */
     width: 100%;
 }
 
 .character-card {
-    width: 90%; /* Que ocupen casi todo el ancho */
-    max-width: 300px;
-    padding: 10px;
+    width: 90%; 
+    max-width: 250px; /* Ajustamos un poco el ancho para que quepa mejor en vertical */
     margin: 0 auto;
 }
 
-/* 3. Ajuste de imágenes para que no ocupen toda la pantalla */
-.img-container {
-    max-height: 200px; /* Un poco más pequeñas en móvil para que quepan ambas */
-}
-
-/* 4. Textos: adaptables */
-.logo {
-    font-size: 2.2rem; /* Más pequeño en móvil */
-    margin-bottom: 15px;
-}
-
-#question-text {
-    font-size: 1.1rem;
-    padding: 0 10px;
-    margin-bottom: 15px;
-}
-
-/* 5. MEDIA QUERY: Para pantallas grandes (Tablets y PC) */
-@media (min-width: 768px) {
-    .cards-container {
-        flex-direction: row; /* Vuelven a estar una al lado de la otra */
-        gap: 25px;
-    }
-    
-    .logo {
-        font-size: 4rem;
+    .results-history { 
+        grid-template-columns: repeat(2, 1fr); 
+        max-height: 45vh; 
     }
 
-    .img-container {
-        max-height: none; /* Sin límite en PC */
+    .disclaimer {
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.9);
     }
 
-    .character-card {
-        width: 260px;
+    .disclaimer p {
+        font-size: 0.55rem;
+        line-height: 1.2;
     }
-}
-
-/* 6. Footer (Legal) para móvil */
-.disclaimer {
-    padding: 15px 10px; /* Un poco más de espacio para los dedos */
-}
-
-.disclaimer p {
-    font-size: 0.55rem;
-    line-height: 1.2;
 }
