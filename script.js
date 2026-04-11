@@ -24,7 +24,7 @@ const langData = {
     es: {
         play: "Jugar", langBtn: "Idioma: ES", credits: "Créditos", counter: "Elección:", replay: "Volver a jugar", home: "Menú",
         made: "Hecho por MysticVlez", insp: "Inspirado en Merlina (Netflix)",
-        legal: "Este es un proyecto sin fines de lucro creado por fans. Todos los derechos de los personajes e imágenes pertenecen a Netflix.",
+        legal: "Este es un proyecto sin fines de lucro creado por fans. Todos los derechos de los personajes e imágenes pertenecen a Netflix. NOTA: EL JUEGO NO TIENE INTENCIONES DE OFENDER O COMPARAR A NADIE.",
         contact: "Dudas o comentarios, contacte al: mysticvlez1@gmail.com",
         questions: [
             "¿Con quién preferirías compartir habitación en Nevermore?",
@@ -100,7 +100,7 @@ const langData = {
     en: {
         play: "Play", langBtn: "Language: EN", credits: "Credits", counter: "Choice:", replay: "Play Again", home: "Menu",
         made: "Made by MysticVlez", insp: "Inspired by Wednesday (Netflix)",
-        legal: "This is a non-profit fan project. All rights to characters and images belong to Netflix.",
+        legal: "This is a non-profit fan project. All rights to characters and images belong to Netflix. NOTE: THE GAME IS NOT INTENDED TO OFFEND OR COMPARE ANYONE.",
         contact: "Questions or comments, contact: mysticvlez1@gmail.com",
         questions: [
             "Who would you share a room with in Nevermore?",
