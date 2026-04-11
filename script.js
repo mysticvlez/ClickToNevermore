@@ -25,6 +25,7 @@ const langData = {
         play: "Jugar", langBtn: "Idioma: ES", credits: "Créditos", counter: "Elección:", replay: "Volver a jugar", home: "Menú",
         made: "Hecho por Elias Villegas (MysticVlez)", insp: "Inspirado en Merlina (Netflix)",
         legal: "Este es un proyecto sin fines de lucro creado por fans. Todos los derechos de los personajes e imágenes pertenecen a Netflix.",
+        contact: "Dudas o comentarios, contacte al: elias.villetab27@gmail.com",
         questions: [
             "¿Con quién preferirías compartir habitación en Nevermore?",
             "¿A quién le confiarías tu mayor secreto?",
@@ -100,6 +101,7 @@ const langData = {
         play: "Play", langBtn: "Language: EN", credits: "Credits", counter: "Choice:", replay: "Play Again", home: "Menu",
         made: "Made by Elias Villegas (MysticVlez)", insp: "Inspired by Wednesday (Netflix)",
         legal: "This is a non-profit fan project. All rights to characters and images belong to Netflix.",
+        contact: "Questions or comments, contact: elias.villetab27@gmail.com",
         questions: [
             "Who would you share a room with in Nevermore?",
             "Who would you trust with your biggest secret?",
@@ -194,6 +196,7 @@ function updateUI() {
     document.getElementById('cred-made').textContent = t.made;
     document.getElementById('cred-insp').textContent = t.insp;
     document.getElementById('legal-text').textContent = t.legal;
+    document.getElementById('cred-contact').textContent = t.contact;
 }
 
 // Listas de espera para evitar repeticiones
